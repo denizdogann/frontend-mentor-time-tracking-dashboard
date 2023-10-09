@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+*{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+	margin: 0;
+}
+body{
+    background-color:hsl(226, 43%, 10%) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container{
+    margin-top:2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+    max-width: 350px;
+    min-width: 280px;
+    gap:1rem;
+}
+.box{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:hsl(235, 46%, 20%);
+    border-radius: 10px;
+}
+.top, .bottom{
+    border-radius: 10px;
+    width: 100%;
+}
+.name{
+    font-weight: 300; 
+    letter-spacing: 2px; 
+    font-size: large;
+}
+#profile .top{
+    background-color: hsl(246, 80%, 60%);
+    padding:1rem;
+    color:white;
+    display: flex;
+    gap:1.5rem;
+    align-items: center;
+    
+}
+.avatar{
+    width:50px;
+    float: left;
+    border-radius: 50%;
+    border:2px solid white
+}
+
+#profile .bottom{
+    padding:15px 0;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    border:0;
+    background-color: transparent;
+    color:hsl(235, 45%, 61%);
+    font-size: 1em;
+}
+
+.unit svg{
+    float:right;
+    color:hsl(236, 100%, 87%);
+}
+.unit .top{
+    height:40px;
+}
+.unit .bottom{
+    padding: 20px;
+    color:white;
+    background-color:hsl(235, 46%, 20%) ;
+    display: flex;
+    justify-content:space-between;
+}
+.bottom > * {
+    gap:.4rem
+}
+.unit svg:hover{
+    color:white;
+    cursor: pointer;
+}
+#work{
+    background-color: hsl(15, 100%, 70%);
+}
+#play{
+    background-color: hsl(195, 74%, 62%);
+}
+#study{
+    background-color: hsl(348, 100%, 68%);
+}
+#exercise{
+    background-color: hsl(145, 58%, 55%);
+}
+#social{
+    background-color: hsl(264, 64%, 52%);
+}
+#self-care{
+    background-color: hsl(43, 84%, 65%);
+}
+
+.left{  
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.cur-time{
+    font-weight:300;
+    font-size:xx-large;
+}
+.tag{
+    font-weight:500;
+}
+  
+.right{
+    text-align:right;
+    display:flex;
+    flex-direction:column;
+    align-items:end;
+    
+}
+.last-time{
+    font-size: small;
+    color: hsl(236, 100%, 87%);
+}
+[check="checked"]{
+    color:white;
+}
+button:hover,
+.right svg:hover{
+    cursor:pointer;
+}
+
+@media all and (min-width:800px){
+    body{
+        height:100vh;
+    }
+    .container{
+        min-width:1000px;
+        height:400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "profile work play study"
+        "profile exercise social self-care";
+    }
+    #profile{
+        height: 100%;
+        grid-area: profile;
+    }
+    #work{
+        grid-area: work;
+    }
+    #play{
+        grid-area: play;
+    }
+    #study{
+        grid-area: study;
+    }
+    #exercise{
+        grid-area: exercise;
+    }
+    #social{
+        grid-area: social;
+    }
+    #self-care{
+        grid-area: self-care;
+    }
+    
+    #profile .top{
+        padding:1rem 2rem;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: start;
+    }
+    #profile .bottom{
+        gap:.6rem;
+        padding:1rem;
+        flex-direction: column;
+        align-items: start;
+    }
+    .name{
+        font-size: xx-large;
+    }
+    .unit {
+        height:100%;
+        
+    }
+    .unit .bottom{
+        padding: 1rem;
+        flex-grow: 1;
+        display: block;
+        position: relative;
+    }
+    .left, .right{
+        display:block;
+    }
+    .left > * , .right > * {
+        position:absolute;
+    }
+    .right svg {
+        top:1rem;
+        right:1rem;
+    }
+    .right .last-time{
+        bottom:1.2rem;
+    }
+    .left .tag{
+        top:1.2rem;
+        left:1rem;
+    }
+    .left .cur-time{
+        bottom:2.5rem;
+        left:1rem;
+        font-size: 3rem;
+    }
+    .unit .bottom:hover{
+        cursor:pointer;
+        background-color:rgb(52, 57, 123) ;
+    }
+    .name-box{
+        margin-top:1rem;
+    }
+    
+}
